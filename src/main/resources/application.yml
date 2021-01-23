@@ -1,0 +1,12 @@
+management:
+  metrics:
+    export:
+      nightingale:
+        #可以选择agent或transfer地址，推荐使用agent作为url地址，agent是/v1/push，服务端是/api/transfer/push
+        url: http://localhost:5810/v1/push
+        #step为监控数据的上报周期
+        step: 10s
+        #【选填】tags是监控数据的属性标签，默认为空
+        tags: device=sda
+        #endpoint（一般是机器ip）或者nid（服务树节点id），两者选其一，
+        endpoint: 127.0.0.1
